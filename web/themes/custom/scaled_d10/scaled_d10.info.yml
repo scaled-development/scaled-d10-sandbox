@@ -1,0 +1,6 @@
+name: 'Scaled D10'
+type: theme
+description: 'My sandbox theme for Drupal 10'
+core_version_requirement: '>=10'
+base theme: false
+starterkit: false

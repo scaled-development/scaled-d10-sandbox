@@ -40,7 +40,10 @@
         "drupal/masquerade": "^2.0@RC",
         "drupal/menu_block": "^1.10",
         "drupal/login_destination": "^2.0@beta",
-        "drupal/libraries": "^4.0"
+        "drupal/libraries": "^4.0",
+        "drupal/gin_toolbar": "^1.0@rc",
+        "drupal/gin": "^3.0@rc",
+        "drupal/auto_entitylabel": "^3.0"
     },
     "require-dev": {
         "drupal/core-dev": "^10"

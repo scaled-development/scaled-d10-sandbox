@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Scaled D10 theme.
+
+scaled_d10.settings:
+  type: theme_settings
+  label: 'Stark settings'
