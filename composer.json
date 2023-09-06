@@ -43,7 +43,14 @@
         "drupal/libraries": "^4.0",
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/gin": "^3.0@rc",
-        "drupal/auto_entitylabel": "^3.0"
+        "drupal/auto_entitylabel": "^3.0",
+        "drupal/entity_usage": "^2.0@beta",
+        "drupal/textarea_limit": "^3.0",
+        "drupal/entity_clone": "^2.0@beta",
+        "drupal/devel": "^5.1",
+        "drupal/devel_kint_extras": "^1.1",
+        "drupal/field_group": "^3.4",
+        "drupal/admin_toolbar": "^3.4"
     },
     "require-dev": {
         "drupal/core-dev": "^10"

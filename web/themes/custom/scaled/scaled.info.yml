@@ -1,0 +1,23 @@
+name: 'Scaled, Drupal 10'
+type: theme
+'base theme': stable9
+starterkit: true
+version: VERSION
+libraries:
+  - scaled/base
+  - scaled/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - scaled/user
+  core/drupal.dropbutton:
+    - scaled/dropbutton
+  core/drupal.dialog:
+    - scaled/dialog
+  file/drupal.file:
+    - scaled/file
+  core/drupal.progress:
+    - scaled/progress
+core_version_requirement: ^10
+generator: 'starterkit_theme:10.1.1'
+description: 'A theme generated from starter kit'
