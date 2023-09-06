@@ -20,4 +20,4 @@ libraries-extend:
     - scaled/progress
 core_version_requirement: ^10
 generator: 'starterkit_theme:10.1.1'
-description: 'A theme generated from starter kit'
+description: 'A theme generated from starter kit, test change'
