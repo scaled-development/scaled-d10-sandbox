@@ -1,0 +1,80 @@
+
+@use '../util' as u;
+@use 'colors' as c;
+@use 'spacing' as s;
+
+
+* {
+   //@include u.primary-font;
+    //font-family: u.$sans;
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//     font-weight: 700;
+//     line-height: 1.1; /* basically 110% */
+//     margin-top: 0; /* browser reset */
+// }
+
+h1 {
+    font-size: clamp(u.rem(36), u.rem(50) + 6vw, u.rem(68)); 
+    font-family: u.$accent-font;
+    line-height:3rem;
+
+    &.bg {
+        font-size: 8rem;
+        margin-bottom: 0;
+    }
+}
+
+h2 {
+    font-size: clamp(u.rem(26), u.rem(24) + 2vw, u.rem(40)); 
+}
+
+h3, h5 {
+    font-family: u.$serif;
+}
+
+h2, h4, h6 {
+    font-family: u.$sans;
+    line-height: 2rem;
+}
+
+
+h3 {
+    font-size: clamp(u.rem(20), u.rem(14) + 1.5vw, u.rem(24));
+}
+
+h4 {
+    font-size: clamp(u.rem(20), u.rem(14) + 1.5vw, u.rem(24));
+}
+
+h5 {
+    font-size: clamp(u.rem(18), u.rem(14) + 1.5vw, u.rem(22));
+}
+
+h6 {
+    font-size: clamp(u.rem(18), u.rem(14) + 1.5vw, u.rem(22));
+}
+
+p, main .field, ul, ol {
+   //font-size: u.rem(16);
+    margin-top:0;
+}
+
+body {
+    @include u.primary-font;
+
+}
+
+a, 
+a:visited, 
+a:active {
+   /* text-decoration: none;*/
+    color: c.$primary-text-color;
+}
+
+.bg-text {
+    font-size: 2rem; // when bigger text is needed
+    line-height: 2rem;
+    margin-bottom: s.$s;
+}

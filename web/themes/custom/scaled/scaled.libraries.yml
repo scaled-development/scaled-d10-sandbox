@@ -2,12 +2,13 @@ base:
   version: VERSION
   css:
     component:
+      dist/style.css: {}
       css/components/action-links.css:
         weight: -10
       css/components/breadcrumb.css:
         weight: -10
-      css/components/button.css:
-        weight: -10
+      # css/components/button.css:
+      #   weight: -10
       css/components/container-inline.css:
         weight: -10
       css/components/details.css:
@@ -46,6 +47,22 @@ base:
         weight: -10
       css/components/ui-dialog.css:
         weight: -10
+buttons-stack:
+  version: VERSION
+  css:
+    component:
+      dist/buttons-stack.css: {}
+video-or-large-image:
+  version: VERSION
+  css:
+    component:
+      dist/video-or-large-image.css: {}
+quote:
+  version: VERSION
+  css:
+    component:
+      dist/quote.css: {}
+
 dialog:
   version: VERSION
   css:

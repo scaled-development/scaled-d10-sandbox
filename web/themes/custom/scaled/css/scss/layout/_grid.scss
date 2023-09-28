@@ -1,0 +1,117 @@
+@use '../util' as u;
+
+/* used for extend:
+%widget {
+    padding: u.rem(16);
+}
+*/
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* we want one column - fr unit used for css grid - fractional unit */
+    grid-template-rows: auto auto;
+    /* sized based on how  much content grid child contains */
+    // gap: 40px; /* space of 40px, we generally use rem which is accessible, will convert later */
+    gap: u.rem(40);
+    // max-width: 1000px; /* so content won't go super wide - old way */
+    // margin: 0 auto; /* center content - old way */
+    width: min(100% - u.rem(40), u.rem(1000));
+    /* new way to center, add 20px on either side without adding to total of 1000px */
+    margin-inline: auto;
+    /* new way to center without having to set top and bottom to zero!! Jess preferred way. */
+    // padding: 0 20px; old way to add padding to either side
+
+    @include u.breakpoint(large) {
+        /* imported breakpoints mixin from util > breakpoints  */
+        grid-template-columns: 2fr 1fr;
+        /* 2 fractional units, 1 fractional unit, seems to know which one goes in which column */
+        grid-template-rows: auto;
+        /* just one row, and set to auto, takes out extra gap beneath track when was still at auto auto */
+        padding: 0 0;
+    }
+
+    &__main,
+    &__sidebar {
+        /* compound selector */
+        // padding: 40px;
+        padding: u.rem(40);
+    }
+
+    &__main {
+        background-color: rgb(4, 4, 77);
+
+        @include u.breakpoint(medium) {
+            /* note, order of media queries matters. */
+            background-color: rgb(2, 59, 51);
+        }
+
+        @include u.breakpoint(large) {
+            background-color: rgb(92, 48, 13);
+        }
+
+    }
+
+    &__sidebar {
+        // background-color: rgb(115, 11, 115); moved to widget
+        /* text-align:center; /* align center by default */
+        /*
+        @include u.breakpoint(large){
+            text-align:left; /* align left for large screens 
+        } */
+
+        /* An example where a max-width media query may be more efficient than min width: */
+        /*
+        @media (max-width:56.25em){
+            text-align:center; /* align center for only for small screens 
+        }
+        */
+
+        @include u.breakpoint-down(medium) {
+            text-align: center;
+            /* for small and medium widths */
+        }
+
+    }
+    &__widget {
+        //$widget: &;
+        // background-color: rgb(115, 11, 115); moved to magenta
+        // border: 1px solid cyan; /* fixing margin collapse - block formating context like this will make the strange padding go away, so margin won't collapse into each other. Can also add a padding, other conditions as well, look them up */
+        // padding: u.rem(16); moved to %widget at top
+        padding: u.rem(16); /* moved back */
+
+        /*
+        &--magenta {
+            // @extend %widget; -- when coming from top
+            background-color: rgb(115, 11, 115);
+
+        }*/
+
+        /*
+        &.magenta {
+            background-color: rgb(115, 11, 115);
+
+        } 
+        */
+        
+        /*
+        &--green {
+            background-color: rgb(4, 98, 93);
+            // because background color comes after the default color, this takes precedence.
+        }
+        */
+        /*
+        &--green {
+            // @extend .grid__widget; /* see extend, must include 'grid' in this case, but here is a workaround below */
+            //@extend #{$widget}; /* created a sass variable so we don't have to write out 'grid'  */
+            // @extend %widget; - when coming from top 
+            // background-color: rgb(4, 98, 93);
+            // because background color comes after the default color, this takes precedence.
+        // }
+        /*
+        &.green {
+            background-color: rgb(4, 98, 93);
+        }*/
+    }
+
+}

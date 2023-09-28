@@ -1,0 +1,41 @@
+
+
+@use '../globals' as g;
+@use '../util' as u;
+
+// @import '../../_base/_colors.scss';
+// @import '../../_base/_elements.scss';
+// @import '../../_base/_transitions.scss';
+// @import '../../_base/_spacing.scss';
+// @import '../../_base/_items.scss';
+// @import '../../_base/_flex.scss';  
+// @import '../../_base/_media-queries.scss'; 
+
+
+.paragraph--type--quote {
+    .flex-wrapper {
+    @include u.breakpoint(medium) {
+    //@media (min-width:$tablet){
+    justify-content:space-between;
+    flex-wrap:no-wrap;
+    flex-direction:row-reverse;
+    align-items:center;
+    }
+    flex-wrap:wrap;
+    .text {
+        flex-basis:100%;
+        @include u.breakpoint(large) {
+        //@media (min-width:$desktop){
+            flex-basis:50%;
+        }
+    #quote {
+        @include g.element-color-2-inverse;
+        padding:g.$s
+        }
+    }
+    #source {
+    @include g.element-color-3-inverse; 
+    padding:g.$s 
+    }
+    }
+}

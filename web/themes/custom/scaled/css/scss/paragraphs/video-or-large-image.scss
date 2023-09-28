@@ -1,0 +1,17 @@
+
+
+
+// @import '../../_base/_colors.scss';
+// @import '../../_base/_elements.scss';
+// @import '../../_base/_transitions.scss';
+// @import '../../_base/_spacing.scss';
+// @import '../../_base/_items.scss'; 
+// @import '../../_base/_media-queries.scss'; 
+
+.paragraph--type--video-or-large-image {
+    img {
+        width:100%; /* we'll just do this for now until we have the correct widths */
+        height:auto;
+    }
+
+}

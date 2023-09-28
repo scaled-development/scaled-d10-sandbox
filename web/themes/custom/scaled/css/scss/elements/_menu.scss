@@ -1,0 +1,46 @@
+
+@use '../globals/' as g;
+@use '../util/' as u;
+
+ul.main-menu {
+    padding: g.$s;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include g.element-color-3;
+
+    @include u.breakpoint(large) {
+        list-style-type: none;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    li {
+        flex-basis:100%;
+        display:flex;
+        justify-content: space-between;
+        margin: 0;
+        @include u.breakpoint(large) {
+            flex-basis: unset;
+        }
+        a {
+            padding: g.$s-sm;
+            @include g.element-color-1;
+            @include g.element-color-hover-1;
+            flex-basis:100%;
+    
+        }
+
+        @include u.breakpoint(large) {
+            a {
+            padding: g.$s;
+            }
+        }
+
+
+    }
+
+}

@@ -1,0 +1,91 @@
+
+@use '../globals' as g;
+@use '../util' as u;
+
+// @import '../../_base/_colors.scss';
+// @import '../../_base/_elements.scss';
+// @import '../../_base/_transitions.scss';
+// @import '../../_base/_spacing.scss';
+// @import '../../_base/_items.scss'; 
+// @import '../../_base/_media-queries.scss'; 
+
+.paragraph--type--buttons-stack {
+    @include g.element-color-1;
+    background-image: linear-gradient(to top, white, g.$primary-light-color);
+    @media (prefers-color-scheme:dark) {
+        background-image: linear-gradient(to top, black, g.$primary-dark-color);
+    }
+    .buttons {
+        .button {
+        @include g.element-color-1;  /* buttons ideally would be be different */
+        @include g.element-color-hover-1;
+    }
+    }
+    &.secondary {
+        @include g.element-color-2;
+        background-image: linear-gradient(to top, white, g.$secondary-light-color);
+        @media (prefers-color-scheme:dark) {
+            background-image: linear-gradient(to top, black, g.$secondary-dark-color);
+        }
+        .buttons {
+        .button {
+            @include g.element-color-2; /* buttons ideally would be be different */
+            @include g.element-color-hover-2;
+        }
+    }
+    }
+    &.tertiary {
+        @include g.element-color-3;
+        background-image: linear-gradient(to top, white, g.$tertiary-light-color);
+        @media (prefers-color-scheme:dark) {
+            background-image: linear-gradient(to top, black, g.$tertiary-dark-color);
+        }
+        .buttons {
+        .button {
+            @include g.element-color-3; /* buttons ideally would be be different */
+            @include g.element-color-hover-3;
+        }
+    }
+    }
+    .buttons {
+        display:flex;
+        justify-content: center;
+        flex-basis:33%;
+        @include u.breakpoint(large) {
+        // @media (min-width:$desktop) {
+            flex-wrap:unset;
+        }
+        .button {
+            flex-basis:16rem;
+        }
+        flex-wrap: wrap;
+    }
+    .flex.right {
+        display:flex;
+        flex-wrap:wrap;
+        @include u.breakpoint(medium) {
+        //@media (min-width:$tablet) {
+            flex-wrap:unset;
+        }
+        .text {
+            flex-basis:100%;
+            @include u.breakpoint(medium) {
+            // @media (min-width:$tablet) {
+            flex-basis:66%;
+            }
+        }
+        .buttons {
+            @include u.breakpoint(medium) {
+            //@media (min-width:$tablet) {
+                flex-basis:33%;
+                }
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            flex-basis:100%;
+            .button {
+                flex-basis:16rem;
+            }
+        }
+    }
+} 

@@ -1,0 +1,37 @@
+
+:root { /* override anything of the same variable name on html and body */
+    --background-color: rgb(162, 0, 102); /* these are css custom properties */
+    --text-color: rgb(211, 211, 211); /* custom properties */
+}
+
+// accent colors - main color source 
+
+// not meant to be used with text due to potential for contrast issues
+$accent-color-1:rgba(228,  0,154,1);
+$accent-color-2: adjust-hue($accent-color-1, 70);
+$accent-color-3: adjust-hue($accent-color-1, 220);
+
+// $accent-color-1:rgba(228,  0,154,1);
+// $accent-color-2:rgba(255,113,  0,1);
+// $accent-color-3:rgba(  0,211,203,1); /* optional */
+
+// darks and lights should be accessible over each other, even with inverse.
+// can add some math formulas here. 
+
+$primary-dark-color:darken($accent-color-1, 20%);
+$secondary-dark-color:darken($accent-color-2, 20%);
+$tertiary-dark-color:darken($accent-color-3, 20%); /* optional */
+
+$primary-light-color:lighten($accent-color-1, 45%);
+$secondary-light-color:lighten($accent-color-2, 45%);
+$tertiary-light-color:lighten($accent-color-3, 45%); /* optional */
+
+$dark-neutral:#333;
+$light-neutral:#ececec;
+
+// how useful is the following if i need to set different colors depending on whether we are in light or dark mode?
+
+$primary-text-color: $primary-dark-color;
+$primary-background-color: $primary-light-color;
+$secondary-text-color: $secondary-dark-color;
+$secondary-background-color:$secondary-light-color;

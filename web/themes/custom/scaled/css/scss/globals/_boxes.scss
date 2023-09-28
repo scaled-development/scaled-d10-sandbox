@@ -1,0 +1,29 @@
+
+@use 'colors' as c;
+@use '../util' as u;
+@use 'schemes' as s;
+
+
+.card {
+    background-color: c.$secondary-light-color;
+    color: c.$secondary-dark-color;
+    a {
+        color: c.$secondary-dark-color;
+        &:hover {
+            color:c.$accent-color-2;
+        }
+    }
+    &.one {
+        @include s.element-color-1;
+    }
+    &.two {
+        @include s.element-color-2-inverse;
+    }
+    &.three {
+        @include s.element-color-3-inverse;
+    }
+}
+
+header {
+    background-color:black;
+}

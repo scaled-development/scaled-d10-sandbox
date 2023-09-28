@@ -1,0 +1,44 @@
+
+@use '../globals/' as g;
+@use 'border-radius' as br;
+@use 'transition-default' as t;
+
+
+button {
+    margin-right:unset;
+}
+
+button, .button { /* default button styles */
+    border-radius:br.$br-sm;
+ @include g.element-color-3;
+ @include g.element-color-hover-3;
+ @include t.transition-default;
+/* border-style:none;*/
+}
+
+button.cta, .button-cta { /* default button styles for call to action */
+    border-radius:br.$br-sm;
+ @include g.element-color-1;
+ flex-basis: 16rem;
+background-image: linear-gradient(to top, g.$accent-color-1, g.$accent-color-2, g.$accent-color-3);
+transition-property: background-image;
+transition-duration: .5s;
+transition-timing-function: ease-in-out;
+&:hover {
+    background-image: linear-gradient(to top, g.$accent-color-3, g.$accent-color-2, g.$accent-color-2);
+}
+}
+
+.button, .button-cta {
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+    padding: g.$s;
+    margin: g.$s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+
+}

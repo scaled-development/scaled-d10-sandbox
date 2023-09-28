@@ -1,0 +1,250 @@
+
+@use 'colors' as c;
+@use '../util' as u;
+
+// there is a better way to do this::after
+
+// element-color here is dark when on light screens, and light when on dark screens
+
+
+// element color 1 styles
+
+@mixin element-color-1 {
+    border-color: c.$accent-color-1;
+    background-color: c.$primary-light-color;
+    color: c.$primary-dark-color;
+    a {
+        color: c.$primary-dark-color;
+        &:hover {
+            color: c.$accent-color-1;
+        }
+        }
+    @media (prefers-color-scheme:dark) {
+        background-color: c.$primary-dark-color;
+        color: c.$primary-light-color;
+        a {
+        color: c.$primary-light-color;
+        &:hover {
+            color: c.$accent-color-1;
+        }
+        }
+    }
+}
+
+// element color 1 - hover version 
+
+@mixin element-color-hover-1 {
+    &:hover {
+        background-color: c.$primary-dark-color;
+        color: c.$primary-light-color;
+    }
+    @media (prefers-color-scheme:dark) {
+        &:hover {
+            background-color: c.$primary-light-color;
+            color: c.$primary-dark-color;
+        }
+    }
+}
+
+// element color 1 - inverse
+
+@mixin element-color-1-inverse {
+    border-color: c.$accent-color-1;
+    background-color: c.$primary-dark-color;
+    color: c.$primary-light-color;
+    a {
+        color: c.$primary-light-color;
+        &:hover {
+            color: c.$accent-color-1;
+        }
+        }
+    @media (prefers-color-scheme:dark) {
+        background-color: c.$primary-light-color;
+        color: c.$primary-dark-color;
+        a {
+        color: c.$primary-dark-color;
+        &:hover {
+            color: c.$accent-color-1;
+        }
+        }
+    }
+}
+
+// element color 1 - inverse hover
+
+@mixin element-color-hover-1-inverse {
+    &:hover {
+        background-color: c.$primary-light-color;
+        color: c.$primary-dark-color;
+    }
+    @media (prefers-color-scheme:dark) {
+        &:hover {
+            background-color: c.$primary-dark-color;
+            color: c.$primary-light-color;
+        }
+    }
+}
+
+/* ---- */
+
+// element color 2 styles
+
+@mixin element-color-2 {
+    border-color: c.$accent-color-2;
+    background-color: c.$secondary-light-color;
+    color: c.$secondary-dark-color;
+    a {
+        color: c.$secondary-dark-color;
+        &:hover {
+            color: c.$accent-color-2;
+        }
+        }
+    @media (prefers-color-scheme:dark) {
+        background-color: c.$secondary-dark-color;
+        color: c.$secondary-light-color;
+        a {
+        color: c.$secondary-light-color;
+        &:hover {
+            color: c.$accent-color-2;
+        }
+        }
+    }
+}
+
+// element-color-2 hover 
+
+@mixin element-color-hover-2 {
+    &:hover {
+        background-color: c.$secondary-dark-color;
+        color: c.$secondary-light-color;
+    }
+    @media (prefers-color-scheme:dark) {
+        &:hover {
+            background-color: c.$secondary-light-color;
+            color: c.$secondary-dark-color;
+        }
+    }
+}
+
+// element color 2 inverse styles
+
+@mixin element-color-2-inverse {
+    border-color: c.$accent-color-2;
+    background-color: c.$secondary-dark-color;
+    color: c.$secondary-light-color;
+    a {
+        color: c.$secondary-light-color;
+        &:hover {
+            color: c.$accent-color-2;
+        }
+        }
+    @media (prefers-color-scheme:dark) {
+        background-color: c.$secondary-light-color;
+        color: c.$secondary-dark-color;
+        a {
+        color: c.$secondary-dark-color;
+        &:hover {
+            color: c.$accent-color-2;
+        }
+        }
+    }
+}
+
+// element color 2 hover inverse 
+
+@mixin element-color-hover-2-inverse {
+    &:hover {
+        background-color: c.$secondary-light-color;
+        color: c.$secondary-dark-color;
+    }
+    @media (prefers-color-scheme:dark) {
+        &:hover {
+            background-color: c.$secondary-dark-color;
+            color: c.$secondary-light-color;
+        }
+    }
+}
+
+
+/* ----- */
+
+
+// element color 3 styles 
+
+
+@mixin element-color-3 {
+    border-color: c.$accent-color-3;
+    background-color: c.$tertiary-light-color;
+    color: c.$tertiary-dark-color;
+    a {
+        color: c.$tertiary-dark-color;
+        &:hover {
+            color: c.$accent-color-3;
+        }
+        }
+    @media (prefers-color-scheme:dark) {
+        background-color: c.$tertiary-dark-color;
+        color: c.$tertiary-light-color;
+        a {
+        color: c.$tertiary-light-color;
+        &:hover {
+            color: c.$accent-color-3;
+        }
+        }
+    }
+}
+
+// element-color-3 hover 
+
+@mixin element-color-hover-3 {
+    &:hover {
+        background-color: c.$tertiary-dark-color;
+        color: c.$tertiary-light-color;
+    }
+    @media (prefers-color-scheme:dark) {
+        &:hover {
+            background-color: c.$tertiary-light-color;
+            color: c.$tertiary-dark-color;
+        }
+    }
+}
+
+// element color 3 styles inverse
+
+
+@mixin element-color-3-inverse {
+    border-color: c.$accent-color-3;
+    background-color: c.$tertiary-dark-color;
+    color: c.$tertiary-light-color;
+    a {
+        color: c.$tertiary-light-color;
+        &:hover {
+            color: c.$accent-color-3;
+        }
+        }
+    @media (prefers-color-scheme:dark) {
+        background-color: c.$tertiary-light-color;
+        color: c.$tertiary-dark-color;
+        a {
+        color: c.$tertiary-dark-color;
+        &:hover {
+            color: c.$accent-color-3;
+        }
+        }
+    }
+}
+
+// element-color-3 hover inverse
+
+@mixin element-color-hover-3-inverse {
+    &:hover {
+        background-color: c.$tertiary-light-color;
+        color: c.$tertiary-dark-color;
+    }
+    @media (prefers-color-scheme:dark) {
+        &:hover {
+            background-color: c.$tertiary-dark-color;
+            color: c.$tertiary-light-color;
+        }
+    }
+}

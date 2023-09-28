@@ -1,0 +1,47 @@
+
+// @use '../globals' as g;
+
+// $font: 'Open Sans', sans-serif;
+
+// fonts and font helpers
+
+/* Use font helpers as includes if the font chosen needs tweaking in terms of size or line height, especially in its interaction with other fonts. Beware of people who want to tweak the "kerning" (ie letter-spacing). those folks can be trouble! */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&family=Ysabeau:wght@400;700&display=swap');
+
+$sans:'Ysabeau', arial, sans-serif;
+$serif:'Lora', Georgia, serif;
+$script:'Dancing Script', 'Brush Script MT', script;
+
+$primary-font: $sans;
+$heading-font: $serif;
+$accent-font: $script;
+
+// mixins here are to allow for additional modifications, such as size or uppercase 
+
+@mixin primary-font ($font:$sans) {
+    font-family: $font;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+
+// @mixin heading-font-1 ($font:$heading-font) { 
+//     font-family:$font;
+// }
+
+// @mixin heading-font-2 ($font:$heading-font) {
+//     font-family:$font;
+// }
+
+
+
+/* Use font helpers as includes if the font chosen needs tweaking in terms of size or line height, especially in its interaction with other fonts. Beware of people who want to tweak the "kerning" (ie letter-spacing). those folks can be trouble! */
+
+/*
+@mixin primary-font ($font:'Ysabeau') {
+    font-family:$font;
+    font-size:$s-lg;
+    line-height:$s-xl; /* remember, line height is always tied to font-size. So if you want something bigger than the standard, go up a slot. $s-lg won't give you greater than $s if the font is also set at $s size */ /*
+}
+*/

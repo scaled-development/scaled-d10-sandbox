@@ -1,0 +1,177 @@
+/* optional */
+/* optional */
+/* optional */
+/* optional */
+/* optional */
+/* optional */
+/* ---- */
+/* ----- */
+/* Everything is relative. Set the base size and go from there. Beat those pixel pushers! */
+/* spacing used for padding, margins, font-sizes etc. Set the spacing and see the effects ripple. */
+/* optional */
+/* optional */
+/* optional */
+/* ---- */
+/* ----- */
+/* Everything is relative. Set the base size and go from there. Beat those pixel pushers! */
+/* spacing used for padding, margins, font-sizes etc. Set the spacing and see the effects ripple. */
+button, .button { /* default button styles */
+  border-radius: 1rem;
+  border-color: rgb(255, 113, 0);
+  background-color: #fff1e6;
+  color: #994400;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  /* border-style:none;*/
+}
+button a, .button a {
+  color: #994400;
+}
+button a:hover, .button a:hover {
+  color: rgb(255, 113, 0);
+}
+@media (prefers-color-scheme: dark) {
+  button, .button {
+    background-color: #994400;
+    color: #fff1e6;
+  }
+  button a, .button a {
+    color: #fff1e6;
+  }
+  button a:hover, .button a:hover {
+    color: rgb(255, 113, 0);
+  }
+}
+button:hover, .button:hover {
+  background-color: #994400;
+  color: #fff1e6;
+}
+@media (prefers-color-scheme: dark) {
+  button:hover, .button:hover {
+    background-color: #fff1e6;
+    color: #994400;
+  }
+}
+
+button.cta, .button-cta { /* default button styles for call to action */
+  border-radius: 2rem;
+  border-color: rgb(228, 0, 154);
+  background-color: #ffcbee;
+  color: #7e0055;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  /* border-style:none;*/
+}
+button.cta a, .button-cta a {
+  color: #ffcbee;
+}
+button.cta a:hover, .button-cta a:hover {
+  color: rgb(228, 0, 154);
+}
+@media (prefers-color-scheme: dark) {
+  button.cta, .button-cta {
+    background-color: #7e0055;
+    color: #ffcbee;
+  }
+  button.cta a, .button-cta a {
+    color: #7e0055;
+  }
+  button.cta a:hover, .button-cta a:hover {
+    color: rgb(228, 0, 154);
+  }
+}
+button.cta:hover, .button-cta:hover {
+  background-color: #7e0055;
+  color: #ffcbee;
+}
+@media (prefers-color-scheme: dark) {
+  button.cta:hover, .button-cta:hover {
+    background-color: #ffcbee;
+    color: #7e0055;
+  }
+}
+
+.button, .button-cta {
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+details {
+  padding: 1rem;
+  border-radius: 2rem;
+  border-color: rgb(0, 211, 203);
+  background-color: #006d69;
+  color: #bafffc;
+}
+details a {
+  color: #bafffc;
+}
+details a:hover {
+  color: rgb(0, 211, 203);
+}
+@media (prefers-color-scheme: dark) {
+  details {
+    background-color: #bafffc;
+    color: #006d69;
+  }
+  details a {
+    color: #006d69;
+  }
+  details a:hover {
+    color: rgb(0, 211, 203);
+  }
+}
+details:hover {
+  background-color: #bafffc;
+  color: #006d69;
+}
+@media (prefers-color-scheme: dark) {
+  details:hover {
+    background-color: #006d69;
+    color: #bafffc;
+  }
+}
+details summary {
+  list-style: none;
+  padding: unset;
+  font-size: 1.25rem;
+}
+details summary::-webkit-details-marker {
+  display: none;
+  padding: unset;
+}
+details summary:after {
+  content: "+";
+  margin: 1rem;
+  font-size: 1.25rem;
+}
+details[open] {
+  /* this exists to negate hovering style when open, so will have no visual effect */
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+details[open]:hover {
+  background-color: #bafffc;
+  color: #006d69;
+}
+@media (prefers-color-scheme: dark) {
+  details[open]:hover {
+    background-color: #bafffc;
+    color: #006d69;
+  }
+}
+details[open] summary:after {
+  content: "-";
+}
+
+.paragraph--type--video-or-large-image img {
+  width: 100%; /* we'll just do this for now until we have the correct widths */
+  height: auto;
+}

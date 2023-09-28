@@ -1,0 +1,33 @@
+
+@use 'sass:math';
+
+
+// font-size: rem(30);
+// throw an error if parameter has a unit accidentally appended
+@function rem($pixel) {
+    // if $pixel has a unit, thrown an error
+    @if math.is-unitless($pixel) { 
+        @return math.div($pixel, 16) + rem;
+        // divide $pixel by 16 to return rem if no unit 
+    }
+    @else {
+        @error 'Don\'t use units when using the rem() function; only numbers';
+        // otherwise throw this error if a unit is mistakenly included
+    }
+};
+
+
+// font-size: em(30);
+// throw an error if parameter has a unit accidentally appended
+@function em($pixel) {
+    // if $pixel has a unit, thrown an error
+    @if math.is-unitless($pixel) { 
+        @return math.div($pixel, 16) + em;
+        // divide $pixel by 16 to return em if no unit 
+    }
+    @else {
+        @error 'Don\'t use units when using the em() function; only numbers';
+        // otherwise throw this error if a unit is mistakenly included
+    }
+};
+
