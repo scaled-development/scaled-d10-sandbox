@@ -1,17 +1,11 @@
 
-@use '../globals' as g;
-@use '../util' as u;
+@use '../globals' as g; // includes colors and schemes
+@use '../util' as u; // includes breakpoints
 
-// @import '../../_base/_colors.scss';
-// @import '../../_base/_elements.scss';
-// @import '../../_base/_transitions.scss';
-// @import '../../_base/_spacing.scss';
-// @import '../../_base/_items.scss'; 
-// @import '../../_base/_media-queries.scss'; 
 
 .paragraph--type--buttons-stack {
     @include g.element-color-1;
-    background-image: linear-gradient(to top, white, g.$primary-light-color);
+    background-image: linear-gradient(to top, white, g.$primary-light-color); 
     @media (prefers-color-scheme:dark) {
         background-image: linear-gradient(to top, black, g.$primary-dark-color);
     }
@@ -29,7 +23,7 @@
         }
         .buttons {
         .button {
-            @include g.element-color-2; /* buttons ideally would be be different */
+            @include g.element-color-2; 
             @include g.element-color-hover-2;
         }
     }
@@ -42,7 +36,7 @@
         }
         .buttons {
         .button {
-            @include g.element-color-3; /* buttons ideally would be be different */
+            @include g.element-color-3; 
             @include g.element-color-hover-3;
         }
     }

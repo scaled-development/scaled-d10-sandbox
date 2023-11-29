@@ -1,13 +1,12 @@
 
-@use '../util' as u; /* use all the stuff in the util folder. note, we also had to add util or u if using as u in front of the $font variable below! */
+@use '../util' as u; 
 @use 'colors' as c;
 @use 'schemes' as s;
 
 
 html {
-    box-sizing: border-box; /* ensures that if you have borders, it won't add to width/height of box */
-    font-size: 100%; /* accessibility */
-    //font-size: 62.5%; /* takes default font size and multiply by .625, this will make it so you can divide font size by 10 instead of 16px. Intead of dividing , say 30 by 16, can divide by 10. */
+    box-sizing: border-box; 
+    font-size: 100%;
 }
 
 *, 
@@ -20,34 +19,25 @@ html {
 body {
     margin: 0; /* reset browser defaults */
     padding: 0; /* reset browser defaults */
-    //font-family: u.$font; /* taken from util folder, see the @use above */
-//    background-color: var(--background-color); /* css custom proeprties */
-//   color: var(--text-color); /* css custom properties */
-//   display: grid; /* center with grid */
-//    justify-content: center;
-//    display: flex;  /* center with flex */
-//    justify-content: center;
-    // background-color:c.$primary-background-color;
-    // color:c.$primary-text-color;
     background-image: linear-gradient(to top, c.$primary-light-color, white);
         border-color: c.$accent-color-1;
         background-color: white;
         color: c.$primary-dark-color;
         a {
             color: c.$primary-dark-color;
-            &:hover {
-                color: c.$accent-color-1;
-            }
-            }
+                &:hover {
+                    color: c.$accent-color-1;
+                }
+        }
         @media (prefers-color-scheme:dark) {
             background-image: linear-gradient(to top, c.$primary-dark-color, black);
             background-color: black;
             color: c.$primary-light-color;
             a {
-            color: c.$primary-light-color;
-            &:hover {
-                color: c.$accent-color-1;
-            }
+                color: c.$primary-light-color;
+                &:hover {
+                    color: c.$accent-color-1;
+                }
             }
         }
 }

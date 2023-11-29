@@ -41,18 +41,19 @@
 
 {{ attach_library('scaled/buttons-stack') }}
 
+{# paragraph component consisting of buttons + text with alignment and color options used for page building #}
+
 {%
   set classes = [
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    paragraph.field_color.0.value,
-    paragraph.field_style.0.value
+    paragraph.field_color.0.value
   ]
 %}
 
-{# User currently has three color options in UI #}
+{# paragraph.field_color.0.value - Three color options + dark mode in UI #}
 
 {% if paragraph.field_style.0.value != 'right' %} 
   {% set wrapper = ' container-sm' %}
@@ -67,18 +68,19 @@
     <div class="container">
       <div class="flex container-paragraphs {{ style }}">
           <div class="text{{ wrapper }}">
-            {% if paragraph.field_header.0.value and paragraph.field_sub_header.0.value %}
-            <h2>{{ paragraph.field_header.0.value }}</h2>
-            <h3>{{ paragraph.field_sub_header.0.value }}</h3> {# for now, this is an h3  #}
+            {% if paragraph.field_header.0.value and paragraph.field_sub_header.0.value %} {# If both header and sub header are present, wrap in h tags #}
+              <h2>{{ paragraph.field_header.0.value }}</h2>
+              <h3>{{ paragraph.field_sub_header.0.value }}</h3> 
             {% elseif paragraph.field_header.0.value %}
-            <h2>{{ paragraph.field_header.0.value }}</h2>
+              <h2>{{ paragraph.field_header.0.value }}</h2>
             {% elseif paragraph.field_sub_header.0.value %}
-            <div class="bg-text">{{ paragraph.field_sub_header.0.value }}</div>
+            <div class="bg-text">
+              {{ paragraph.field_sub_header.0.value }}</div>
             {% endif %}
             {{ paragraph.field_body.0.value|raw }}
             <strong><em>Rendered for testing purposes:</em></strong>
-            {{ content.field_style }}
-            {{ content.field_color }}
+            {{ content.field_style }} {# two style options in UI #}
+            {{ content.field_color }} {# three color options + dark mode in UI #}
           </div>
         <div class="buttons">
           {% for item in paragraph.field_button_link %}
@@ -89,7 +91,6 @@
                 <a class="button" href="{{ item.url }}">{{ item.title }}</a>
               {% endif %}
           {% endfor %}
-        </div>
         </div>
       </div>
     </div>

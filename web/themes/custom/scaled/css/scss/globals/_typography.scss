@@ -45,15 +45,15 @@ h3 {
 }
 
 h4 {
-    font-size: clamp(u.rem(20), u.rem(14) + 1.5vw, u.rem(24));
+    font-size: 1.5rem;
 }
 
 h5 {
-    font-size: clamp(u.rem(18), u.rem(14) + 1.5vw, u.rem(22));
+    font-size: 1.3rem;
 }
 
 h6 {
-    font-size: clamp(u.rem(18), u.rem(14) + 1.5vw, u.rem(22));
+    font-size: 1.25rem;
 }
 
 p, main .field, ul, ol {
